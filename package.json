@@ -1,0 +1,15 @@
+{
+  "name": "boilerplate-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/guisartori/boilerplate-nodejs.git",
+  "author": "Guilherme Sartori <gui.sartori96@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
