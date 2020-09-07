@@ -1,7 +1,11 @@
 import express from 'express'
 import routes from './routes'
+import 'reflect-metadata'
+import './database'
 
 const app = express()
 
-// eslint-disable-next-line no-console
+app.use(express.json())
+app.use(routes)
+
 app.listen(3333, () => console.log('App started'))
