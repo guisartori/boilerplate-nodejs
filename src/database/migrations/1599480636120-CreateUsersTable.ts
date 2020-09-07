@@ -19,6 +19,11 @@ export default class CreateUsersTable1599480636120
 						type: 'varchar'
 					},
 					{
+						name: 'avatar',
+						type: 'varchar',
+						isNullable: true
+					},
+					{
 						name: 'email',
 						isUnique: true,
 						type: 'varchar'

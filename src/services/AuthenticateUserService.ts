@@ -3,6 +3,7 @@ import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import User from '../models/User'
 import auth from '../config/auth'
+import AppError from '../errors/AppError'
 
 interface RequestDTO {
 	email: string
@@ -21,12 +22,12 @@ class AuthenticateUserService {
 		const user = await userRepository.findOne({ where: { email } })
 
 		if (!user) {
-			throw new Error('Email ou senha incorretos.')
+			throw new AppError('Email ou senha incorretos.', 401)
 		}
 
 		const passwordMatch = await compare(password, user.password)
 		if (!passwordMatch) {
-			throw new Error('Email ou senha incorretos.')
+			throw new AppError('Email ou senha incorretos.', 401)
 		}
 
 		delete user.password
